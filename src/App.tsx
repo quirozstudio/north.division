@@ -7,6 +7,7 @@ import { FabricationFeature } from './components/FabricationFeature'
 import { CertificationPlate } from './components/CertificationPlate'
 import { ProjectsLedger } from './components/ProjectsLedger'
 import { DemoFinale } from './components/DemoFinale'
+import { BlueprintAtmosphere } from './components/BlueprintAtmosphere'
 
 export default function App() {
   const [introDone, setIntroDone] = useState(false)
@@ -21,6 +22,7 @@ export default function App() {
 
   return (
     <main>
+      <BlueprintAtmosphere />
       {!introDone && <IntroSequence onComplete={finishIntro} />}
       <Navigation visible={introDone} />
       <Hero ready={introDone} />

@@ -8,6 +8,25 @@ body { margin:0; min-width:320px; background:#050708; overflow-x:hidden }
 button,a { color:inherit; font:inherit }
 a { text-decoration:none }
 
+.blueprint-atmosphere { --blueprint-scroll:0;position:fixed;z-index:3;inset:0;overflow:hidden;pointer-events:none;opacity:.2;mix-blend-mode:screen }
+.blueprint-atmosphere__grid { position:absolute;inset:-12%;background-image:linear-gradient(rgba(91,194,197,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(91,194,197,.13) 1px,transparent 1px);background-size:64px 64px;transform:translate3d(calc(var(--blueprint-scroll) * -28px),calc(var(--blueprint-scroll) * -180px),0);mask-image:linear-gradient(90deg,#000,transparent 35% 66%,#000);opacity:.33;will-change:transform }
+.blueprint-atmosphere__drawing { position:absolute;inset:-8% -4%;width:108%;height:116%;transform:translate3d(0,calc(var(--blueprint-scroll) * -95px),0) scale(calc(1 + var(--blueprint-scroll) * .025));will-change:transform }
+.blueprint-atmosphere__drawing path,.blueprint-atmosphere__drawing circle { fill:none;stroke:#66dadd;vector-effect:non-scaling-stroke }
+.blueprint-atmosphere__axes { opacity:.38 }.blueprint-atmosphere__axes path{stroke-width:.55}
+.blueprint-atmosphere__structure { opacity:.48 }.blueprint-atmosphere__structure path{stroke-width:.8;stroke-dasharray:9 7;stroke-dashoffset:calc(var(--blueprint-scroll) * -180)}
+.blueprint-atmosphere__nodes circle { stroke-width:1;fill:rgba(6,16,18,.8) }
+.blueprint-atmosphere__dimensions { opacity:.58 }.blueprint-atmosphere__dimensions path{stroke-width:.6}.blueprint-atmosphere__dimensions text{fill:#8de3e4;font:8px Inter,sans-serif;letter-spacing:.16em}
+.blueprint-atmosphere__readout { position:absolute;right:24px;bottom:22px;display:flex;gap:22px;color:#76bfc1;font-size:6px;letter-spacing:.2em;transform:translateY(calc(var(--blueprint-scroll) * -18px)) }.blueprint-atmosphere__readout b{color:#b4d9d8;font-weight:500}
+
+@media (max-width:760px) {
+  .blueprint-atmosphere { opacity:.16 }.blueprint-atmosphere__grid{background-size:48px 48px;mask-image:linear-gradient(90deg,#000,transparent 48% 74%,#000)}.blueprint-atmosphere__drawing{width:170%;left:-52%;transform:translate3d(calc(var(--blueprint-scroll) * -25px),calc(var(--blueprint-scroll) * -72px),0)}.blueprint-atmosphere__dimensions text{display:none}.blueprint-atmosphere__readout{display:none}
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .blueprint-atmosphere__grid,.blueprint-atmosphere__drawing { transform:none }
+  .blueprint-atmosphere__structure path { stroke-dashoffset:0 }
+}
+
 /* 15-second master intro — every visual value is driven by IntroSequence.tsx */
 .intro-experience { --intro-logo:0; --intro-entry:0; --intro-seat-impact:0; --intro-impact:0; --intro-north:0; --intro-engineering:0; --intro-technical:0; --intro-wire:0; --intro-flash:0; --intro-exit:0; --intro-progress:0; --intro-weld-active:0; --intro-weld-angle:90; position:fixed; z-index:100; inset:0; overflow:hidden; background:#020304 }
 .experience-gate { position:absolute; z-index:30; inset:0; display:grid; place-items:center; background:radial-gradient(circle at 50% 48%,#11191b 0,#06090a 32%,#020304 72%); transition:opacity .65s cubic-bezier(.7,0,.3,1),visibility .65s }
