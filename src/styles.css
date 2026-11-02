@@ -220,6 +220,38 @@ a { text-decoration:none }
   .intro-scene__logo,.intro-scene__structure,.intro-scene .technical-overlay { filter:none }
 }
 
+/* Field fabrication — photographic proof of execution */
+.fabrication { position:relative;overflow:hidden;padding:clamp(78px,9vw,138px) clamp(22px,7vw,118px);background:#090c0d;color:#efeee9 }
+.fabrication::before { content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.95%,rgba(103,205,207,.13) 50%,transparent 50.05%),repeating-linear-gradient(0deg,transparent 0 79px,rgba(122,150,151,.045) 80px);pointer-events:none }
+.fabrication__header { position:relative;z-index:2;display:flex;justify-content:space-between;padding-bottom:20px;border-bottom:1px solid #364143;color:#65cbcd;font-size:8px;letter-spacing:.22em }
+.fabrication__header p { margin:0;color:#788587 }
+.fabrication__statement { position:relative;z-index:3;display:grid;grid-template-columns:1fr minmax(240px,.32fr);gap:50px;align-items:end;margin:clamp(55px,7vw,95px) 0 -4vw }
+.fabrication__statement h2 { margin:0;font-family:'Barlow Condensed',sans-serif;font-size:clamp(66px,9.6vw,150px);font-weight:600;line-height:.77;letter-spacing:-.025em }
+.fabrication__statement h2 span { color:transparent;-webkit-text-stroke:1px rgba(229,235,230,.72) }
+.fabrication__statement p { max-width:330px;margin:0 0 5vw;color:#97a2a2;font-size:13px;line-height:1.7 }
+.fabrication__frames { position:relative;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(260px,.48fr);gap:clamp(18px,2.3vw,38px);align-items:end }
+.fabrication__frame { position:relative;margin:0;overflow:hidden;background:#111719 }
+.fabrication__frame::after { content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(2,4,5,.88));pointer-events:none }
+.fabrication__frame--primary { aspect-ratio:1.38 }
+.fabrication__frame--secondary { aspect-ratio:.72;transform:translateY(9vw) }
+.fabrication__frame img { width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.1) brightness(.82);transition:transform 1.1s cubic-bezier(.16,1,.3,1),filter .7s }
+.fabrication__frame--primary img { object-position:center 48% }
+.fabrication__frame--secondary img { object-position:center 42% }
+.fabrication__frame:hover img { transform:scale(1.025);filter:saturate(.9) contrast(1.08) brightness(.9) }
+.fabrication__frame figcaption { position:absolute;z-index:2;left:clamp(18px,2.3vw,34px);right:clamp(18px,2.3vw,34px);bottom:clamp(18px,2.3vw,32px);display:flex;justify-content:space-between;align-items:end;border-top:1px solid rgba(221,231,226,.36);padding-top:13px }
+.fabrication__frame figcaption span { color:#8bcfd0;font-size:7px;letter-spacing:.19em }
+.fabrication__frame figcaption b { font-size:8px;font-weight:500;letter-spacing:.2em }
+.fabrication__footer { position:relative;z-index:2;display:flex;align-items:center;gap:18px;margin-top:clamp(105px,14vw,190px);color:#657173;font-size:7px;letter-spacing:.2em }
+.fabrication__footer i { flex:1;height:1px;background:#344143 }.fabrication__footer b{color:#65c9cb;font-weight:500}
+
+@media (max-width:900px) {
+  .fabrication__statement { grid-template-columns:1fr;margin-bottom:35px }.fabrication__statement p{margin:0}.fabrication__frames{grid-template-columns:1fr .58fr}.fabrication__frame--secondary{transform:translateY(55px)}
+}
+
+@media (max-width:600px) {
+  .fabrication { padding-left:20px;padding-right:20px }.fabrication__header p{display:none}.fabrication__statement h2{font-size:62px}.fabrication__statement p{max-width:285px}.fabrication__frames{display:flex;flex-direction:column}.fabrication__frame--primary{width:100%;aspect-ratio:.82}.fabrication__frame--primary img{object-position:56% center}.fabrication__frame--secondary{width:74%;aspect-ratio:.72;align-self:flex-end;transform:none;margin-top:-72px;border:8px solid #090c0d}.fabrication__frame figcaption{display:block}.fabrication__frame figcaption b{display:block;margin-top:7px}.fabrication__footer{margin-top:55px}
+}
+
 /* Extended engineering narrative */
 .section-heading { position:relative;z-index:2;padding:clamp(80px,11vw,170px) clamp(22px,7vw,118px) clamp(52px,7vw,100px);display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid #263234 }
 .section-heading > span { color:#63d0d2;font-size:9px;letter-spacing:.24em }
