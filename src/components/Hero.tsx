@@ -29,7 +29,7 @@ export function Hero({ ready }: { ready: boolean }) {
           <h1><span>ENGINEERING</span><span>THE IMPOSSIBLE.</span></h1>
           <p className="hero__lead">Ingeniería especializada en estructuras metálicas.</p>
           <p className="hero__services">DISEÑO <i/> CÁLCULO <i/> MODELADO 3D <i/> FABRICACIÓN <i/> MONTAJE</p>
-          <a className="hero__cta" href="#transition"><span>DESCUBRIR CAPACIDADES</span><b>→</b></a>
+          <a className="hero__cta" href="#capabilities"><span>DESCUBRIR CAPACIDADES</span><b>→</b></a>
         </div>
         <div className="hero__index"><span>01</span><i/><span>04</span></div>
         <div className="hero__scroll"><span>SCROLL TO ENGINEERING</span><i/></div>

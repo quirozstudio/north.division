@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react'
 import { IntroSequence } from './components/IntroSequence'
 import { Navigation } from './components/Navigation'
 import { Hero } from './components/Hero'
+import { CapabilitiesSequence } from './components/CapabilitiesSequence'
+import { CertificationPlate } from './components/CertificationPlate'
+import { ProjectsLedger } from './components/ProjectsLedger'
+import { DemoFinale } from './components/DemoFinale'
 
 export default function App() {
   const [introDone, setIntroDone] = useState(false)
@@ -19,6 +23,10 @@ export default function App() {
       {!introDone && <IntroSequence onComplete={finishIntro} />}
       <Navigation visible={introDone} />
       <Hero ready={introDone} />
+      <CapabilitiesSequence />
+      <CertificationPlate />
+      <ProjectsLedger />
+      <DemoFinale />
     </main>
   )
 }

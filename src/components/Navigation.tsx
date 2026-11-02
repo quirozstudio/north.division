@@ -11,7 +11,7 @@ export function Navigation({ visible }: { visible: boolean }) {
     <header className={`navigation ${visible ? 'is-visible' : ''}`}>
       <a href="#top" className="navigation__brand"><BrandMark compact /></a>
       <nav aria-label="Principal">
-        <a href="#transition">CAPABILITIES</a><a href="#transition">ENGINEERING</a><a href="#transition">PROJECTS</a><a href="#transition">CONTACT</a>
+        <a href="#capabilities">CAPABILITIES</a><a href="#standard">STANDARD</a><a href="#projects">PROJECTS</a><a href="#finale">CONTACT</a>
         <button type="button" onClick={replayIntro}>REPLAY INTRO</button>
       </nav>
     </header>
